@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		6AFA83522CB1D751001E8C3D /* MusicHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83512CB1D751001E8C3D /* MusicHubApp.swift */; };
-		6AFA83542CB1D751001E8C3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83532CB1D751001E8C3D /* ContentView.swift */; };
+		6AFA83542CB1D751001E8C3D /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83532CB1D751001E8C3D /* ArtistListView.swift */; };
 		6AFA83562CB1D756001E8C3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA83552CB1D756001E8C3D /* Assets.xcassets */; };
 		6AFA83592CB1D756001E8C3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA83582CB1D756001E8C3D /* Preview Assets.xcassets */; };
+		6AFA83632CB2F8B9001E8C3D /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83622CB2F8B9001E8C3D /* Artist.swift */; };
+		6AFA83652CB2FA0C001E8C3D /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83642CB2FA0C001E8C3D /* Release.swift */; };
+		6AFA83682CB2FA99001E8C3D /* DiscogsAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83672CB2FA99001E8C3D /* DiscogsAPIManager.swift */; };
+		6AFA836C2CB2FB16001E8C3D /* ArtistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA836B2CB2FB16001E8C3D /* ArtistViewModel.swift */; };
+		6AFA836E2CB31DE0001E8C3D /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA836D2CB31DE0001E8C3D /* EmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6AFA834E2CB1D751001E8C3D /* MusicHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AFA83512CB1D751001E8C3D /* MusicHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHubApp.swift; sourceTree = "<group>"; };
-		6AFA83532CB1D751001E8C3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6AFA83532CB1D751001E8C3D /* ArtistListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
 		6AFA83552CB1D756001E8C3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AFA83582CB1D756001E8C3D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6AFA83622CB2F8B9001E8C3D /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		6AFA83642CB2FA0C001E8C3D /* Release.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Release.swift; sourceTree = "<group>"; };
+		6AFA83672CB2FA99001E8C3D /* DiscogsAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscogsAPIManager.swift; sourceTree = "<group>"; };
+		6AFA836B2CB2FB16001E8C3D /* ArtistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewModel.swift; sourceTree = "<group>"; };
+		6AFA836D2CB31DE0001E8C3D /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +61,11 @@
 		6AFA83502CB1D751001E8C3D /* MusicHub */ = {
 			isa = PBXGroup;
 			children = (
+				6AFA83662CB2FA8D001E8C3D /* Repository */,
+				6AFA835F2CB2F883001E8C3D /* Model */,
+				6AFA83602CB2F88F001E8C3D /* View */,
+				6AFA83612CB2F8A1001E8C3D /* ViewModel */,
 				6AFA83512CB1D751001E8C3D /* MusicHubApp.swift */,
-				6AFA83532CB1D751001E8C3D /* ContentView.swift */,
 				6AFA83552CB1D756001E8C3D /* Assets.xcassets */,
 				6AFA83572CB1D756001E8C3D /* Preview Content */,
 			);
@@ -65,6 +78,40 @@
 				6AFA83582CB1D756001E8C3D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6AFA835F2CB2F883001E8C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6AFA83622CB2F8B9001E8C3D /* Artist.swift */,
+				6AFA83642CB2FA0C001E8C3D /* Release.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6AFA83602CB2F88F001E8C3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6AFA83532CB1D751001E8C3D /* ArtistListView.swift */,
+				6AFA836D2CB31DE0001E8C3D /* EmptyStateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6AFA83612CB2F8A1001E8C3D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6AFA836B2CB2FB16001E8C3D /* ArtistViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6AFA83662CB2FA8D001E8C3D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				6AFA83672CB2FA99001E8C3D /* DiscogsAPIManager.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AFA83542CB1D751001E8C3D /* ContentView.swift in Sources */,
+				6AFA83632CB2F8B9001E8C3D /* Artist.swift in Sources */,
+				6AFA83652CB2FA0C001E8C3D /* Release.swift in Sources */,
+				6AFA83682CB2FA99001E8C3D /* DiscogsAPIManager.swift in Sources */,
+				6AFA836C2CB2FB16001E8C3D /* ArtistViewModel.swift in Sources */,
+				6AFA83542CB1D751001E8C3D /* ArtistListView.swift in Sources */,
 				6AFA83522CB1D751001E8C3D /* MusicHubApp.swift in Sources */,
+				6AFA836E2CB31DE0001E8C3D /* EmptyStateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
