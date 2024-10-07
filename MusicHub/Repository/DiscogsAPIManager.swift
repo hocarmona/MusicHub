@@ -57,5 +57,42 @@ class DiscogsAPIManager {
         }
         task.resume()
     }
+    
+    
+    func fetchArtistDetails(artistId: Int, completion: @escaping (Result<ArtistMoreDetails, Error>) -> Void) {
+            let urlString = "\(baseURL)/artists/\(artistId)"
+            guard let url = URL(string: urlString) else {
+                completion(.failure(NetworkError.invalidURL))
+                return
+            }
+
+            var request = URLRequest(url: url)
+            request.addValue("Discogs token=\(token)", forHTTPHeaderField: "Authorization")
+            request.addValue(userAgent, forHTTPHeaderField: "User-Agent")
+
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+
+                // Comprobación del código de respuesta HTTP
+                guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                    completion(.failure(NetworkError.invalidResponse))
+                    return
+                }
+                guard let data = data else {
+                    completion(.failure(NetworkError.noData))
+                    return
+                }
+                do {
+                    let artistDetails = try JSONDecoder().decode(ArtistMoreDetails.self, from: data)
+                    completion(.success(artistDetails))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
 }
 

@@ -8,6 +8,7 @@
 import SwiftUI
 
 class ArtistViewModel: ObservableObject {
+    @Published var selectedArtist: SearchResult?
     @Published var artists: [SearchResult] = []
     @Published var errorMessage: String? = nil
     @Published var searchQuery: String = "" {
