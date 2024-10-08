@@ -70,12 +70,12 @@ class ArtistAlbumsViewModel: ObservableObject {
     var filteredAlbums: [Release] {
         var albums = albums?.releases ?? []
 
-        if let year = selectedYear {
-            albums = albums.filter { $0.year == year }
+        if let selectedYear {
+            albums = albums.filter { $0.year == selectedYear }
         }
 
-        if let label = selectedLabel {
-            albums = albums.filter { $0.label == label }
+        if let selectedLabel {
+            albums = albums.filter { $0.label == selectedLabel }
         }
 
         switch selectedSortOption {

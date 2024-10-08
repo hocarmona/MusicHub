@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 // MARK: - ArtistDetailView
 struct ArtistDetailView: View {
@@ -20,16 +21,15 @@ struct ArtistDetailView: View {
             VStack(alignment: .leading, spacing: 16) {
                 if let artistImage = viewModel.artistImage, let url = URL(string: artistImage) {
                     ZStack(alignment: .bottomLeading) {
-                        AsyncImage(url: url) { image in
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(maxWidth: .infinity, maxHeight: 250)
-                                .clipped()
-                                .ignoresSafeArea(edges: .top)
-                        } placeholder: {
-                            ProgressView()
-                        }
+                        KFImage(url)
+                            .placeholder {
+                                ProgressView()
+                            }
+                            .resizable()
+                            .scaledToFill()
+                            .frame(maxWidth: .infinity, maxHeight: 250)
+                            .clipped()
+                            .ignoresSafeArea(edges: .top)
                         if !viewModel.isLoading, let artistName = viewModel.artist?.name {
                             Text(artistName)
                                 .font(.system(size: 36, weight: .bold, design: .rounded))

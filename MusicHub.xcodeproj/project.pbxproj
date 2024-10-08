@@ -11,6 +11,7 @@
 		6AAD74472CB4F322008B9B94 /* ArtistViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD74462CB4F322008B9B94 /* ArtistViewModelTests.swift */; };
 		6AAD74492CB4F749008B9B94 /* ArtistDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD74482CB4F749008B9B94 /* ArtistDetailViewModelTests.swift */; };
 		6AAD744B2CB4F8E1008B9B94 /* ArtistAlbumsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD744A2CB4F8E1008B9B94 /* ArtistAlbumsViewModelTests.swift */; };
+		6AAD744E2CB5034C008B9B94 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6AAD744D2CB5034C008B9B94 /* Kingfisher */; };
 		6AFA83522CB1D751001E8C3D /* MusicHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83512CB1D751001E8C3D /* MusicHubApp.swift */; };
 		6AFA83542CB1D751001E8C3D /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83532CB1D751001E8C3D /* ArtistListView.swift */; };
 		6AFA83562CB1D756001E8C3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA83552CB1D756001E8C3D /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AAD744E2CB5034C008B9B94 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +210,9 @@
 			dependencies = (
 			);
 			name = MusicHub;
+			packageProductDependencies = (
+				6AAD744D2CB5034C008B9B94 /* Kingfisher */,
+			);
 			productName = MusicHub;
 			productReference = 6AFA834E2CB1D751001E8C3D /* MusicHub.app */;
 			productType = "com.apple.product-type.application";
@@ -240,6 +245,9 @@
 				Base,
 			);
 			mainGroup = 6AFA83452CB1D751001E8C3D;
+			packageReferences = (
+				6AAD744C2CB5034B008B9B94 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 6AFA834F2CB1D751001E8C3D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -559,6 +567,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6AAD744C2CB5034B008B9B94 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6AAD744D2CB5034C008B9B94 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6AAD744C2CB5034B008B9B94 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6AFA83462CB1D751001E8C3D /* Project object */;
 }
