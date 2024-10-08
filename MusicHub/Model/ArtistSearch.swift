@@ -54,6 +54,8 @@ struct SearchResult: Codable {
 // MARK: - TypeEnum
 enum TypeEnum: String, Codable {
     case artist = "artist"
+    case master = "master"
+    case release = "release"
 }
 
 // MARK: - UserData
