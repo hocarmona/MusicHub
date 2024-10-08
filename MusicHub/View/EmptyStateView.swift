@@ -10,12 +10,6 @@ import SwiftUI
 struct EmptyStateView: View {
     var body: some View {
         VStack {
-//            Image(systemName: "magnifyingglass")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 100, height: 100)
-//                .foregroundColor(.gray)
-
             Text("No artists found")
                 .font(.title)
                 .foregroundColor(.gray)

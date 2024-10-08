@@ -10,7 +10,7 @@ import Kingfisher
 
 struct ArtistListView: View {
     
-    @ObservedObject var viewModel = ArtistViewModel()
+    @StateObject var viewModel = ArtistViewModel()
 
     var body: some View {
         NavigationView {
