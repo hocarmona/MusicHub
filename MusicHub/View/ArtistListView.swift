@@ -15,7 +15,9 @@ struct ArtistListView: View {
         NavigationView {
             VStack {
                 if viewModel.artists.isEmpty {
-                    EmptyStateView()
+                    ScrollView {
+                        EmptyStateView()
+                    }
                 } else {
                     List(viewModel.artists, id: \.id) { artist in
                         Button(action: {
