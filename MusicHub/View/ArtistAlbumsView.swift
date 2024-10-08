@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ArtistAlbumsView: View {
     @ObservedObject var viewModel: ArtistAlbumsViewModel
@@ -42,10 +43,12 @@ struct ArtistAlbumsView: View {
 
             List(viewModel.filteredAlbums, id: \.id) { album in
                 HStack {
-                    AsyncImage(url: URL(string: album.thumb ?? ""))
+                    KFImage(URL(string: album.thumb ?? ""))
+                        .placeholder {
+                            ProgressView()
+                        }
                         .frame(width: 50, height: 50)
                         .clipShape(RoundedRectangle(cornerRadius: 5))
-
                     VStack(alignment: .leading) {
                         Text(album.title).font(.headline)
                         Text(album.artist ?? "Unknown Artist").font(.subheadline)

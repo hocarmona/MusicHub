@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ArtistListView: View {
     
@@ -25,15 +26,14 @@ struct ArtistListView: View {
                         }) {
                             HStack {
                                 if let url = URL(string: artist.thumb) {
-                                    AsyncImage(url: url) { image in
-                                        image
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 50, height: 50)
-                                            .cornerRadius(5)
-                                    } placeholder: {
-                                        ProgressView()
-                                    }
+                                    KFImage(url)
+                                        .placeholder {
+                                            ProgressView()
+                                        }
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 50, height: 50)
+                                        .cornerRadius(5)
                                 }
                                 Text(artist.title)
                             }
