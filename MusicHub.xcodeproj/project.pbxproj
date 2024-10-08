@@ -22,6 +22,7 @@
 		6AFA83762CB459D7001E8C3D /* ArtistAlbumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83752CB459D7001E8C3D /* ArtistAlbumsView.swift */; };
 		6AFA83782CB459F7001E8C3D /* ArtistAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83772CB459F7001E8C3D /* ArtistAlbumsViewModel.swift */; };
 		6AFA837A2CB47944001E8C3D /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83792CB47944001E8C3D /* SortOption.swift */; };
+		6AFA837C2CB4D2B2001E8C3D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA837B2CB4D2B2001E8C3D /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		6AFA83752CB459D7001E8C3D /* ArtistAlbumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistAlbumsView.swift; sourceTree = "<group>"; };
 		6AFA83772CB459F7001E8C3D /* ArtistAlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistAlbumsViewModel.swift; sourceTree = "<group>"; };
 		6AFA83792CB47944001E8C3D /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
+		6AFA837B2CB4D2B2001E8C3D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				6AFA83642CB2FA0C001E8C3D /* ArtistAlbums.swift */,
 				6AFA83732CB3638B001E8C3D /* ArtistMoreDetails.swift */,
 				6AFA83792CB47944001E8C3D /* SortOption.swift */,
+				6AFA837B2CB4D2B2001E8C3D /* NetworkError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AFA83632CB2F8B9001E8C3D /* ArtistSearch.swift in Sources */,
+				6AFA837C2CB4D2B2001E8C3D /* NetworkError.swift in Sources */,
 				6AFA83782CB459F7001E8C3D /* ArtistAlbumsViewModel.swift in Sources */,
 				6AFA83742CB3638B001E8C3D /* ArtistMoreDetails.swift in Sources */,
 				6AFA83652CB2FA0C001E8C3D /* ArtistAlbums.swift in Sources */,

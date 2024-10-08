@@ -9,7 +9,7 @@ import Foundation
 
 struct ArtistAlbums: Codable {
     let pagination: Pagination
-    let releases: [Release]
+    var releases: [Release]
 }
 
 

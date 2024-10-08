@@ -36,7 +36,8 @@ struct ArtistAlbumsView: View {
                 ForEach(SortOption.allCases) { option in
                     Text(option.rawValue).tag(option)
                 }
-            }.pickerStyle(SegmentedPickerStyle())
+            }
+            .pickerStyle(SegmentedPickerStyle())
             .padding()
 
             List(viewModel.filteredAlbums, id: \.id) { album in
@@ -52,9 +53,18 @@ struct ArtistAlbumsView: View {
                         Text("Label: \(album.label ?? "Unknown Label")").font(.caption)
                     }
                 }
+                .onAppear {
+                    viewModel.loadMoreAlbumsIfNeeded(currentAlbum: album)
+                }
+            }
+            if viewModel.isLoading {
+                ProgressView("Cargando más álbumes...")
+                    .padding()
             }
         }
-        .onAppear {}
+        .onAppear {
+            viewModel.fetchArtistReleases(artistId: viewModel.artistId, page: viewModel.currentPage)
+        }
     }
 }
 

@@ -8,13 +8,6 @@
 
 import Foundation
 
-// Definición de los errores de red
-enum NetworkError: Error {
-    case invalidURL
-    case noData
-    case invalidResponse
-}
-
 class DiscogsAPIManager {
     private let baseURL = "https://api.discogs.com"
     private let token = "FApxJMyYMjGWOBBJwoQiIWVItklsxjaZMaXYxhgH"
@@ -92,8 +85,8 @@ class DiscogsAPIManager {
         task.resume()
     }
     
-    func fetchArtistReleases(artistId: Int, completion: @escaping (Result<ArtistAlbums, Error>) -> Void) {
-        let urlString = "\(baseURL)/artists/\(artistId)/releases"
+    func fetchArtistReleases(artistId: Int, page: Int = 1, completion: @escaping (Result<ArtistAlbums, Error>) -> Void) {
+        let urlString = "\(baseURL)/artists/\(artistId)/releases?page=\(page)&per_page=30"
         guard let url = URL(string: urlString) else {
             completion(.failure(NetworkError.invalidURL))
             return
@@ -118,14 +111,15 @@ class DiscogsAPIManager {
                 return
             }
             do {
-                let artistDetails = try JSONDecoder().decode(ArtistAlbums.self, from: data)
-                completion(.success(artistDetails))
+                let artistAlbums = try JSONDecoder().decode(ArtistAlbums.self, from: data)
+                completion(.success(artistAlbums))
             } catch {
                 completion(.failure(error))
             }
         }
         task.resume()
     }
+
 
 }
 

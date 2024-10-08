@@ -14,28 +14,46 @@ class ArtistAlbumsViewModel: ObservableObject {
     @Published var albums: ArtistAlbums?
     private let apiManager = DiscogsAPIManager()
     @Published var errorMessage: String?
-    
     @Published var selectedYear: Int? = nil
     @Published var selectedLabel: String? = nil
     @Published var selectedSortOption: SortOption = .releaseDate
+    @Published var currentPage: Int = 1
+    private var hasMoreAlbums: Bool = true
 
     init(artistId: Int) {
         self.artistId = artistId
-        fetchArtistReleases(artistId: artistId)
+        fetchArtistReleases(artistId: artistId, page: currentPage)
     }
     
-    func fetchArtistReleases(artistId: Int) {
+    func fetchArtistReleases(artistId: Int, page: Int) {
+        isLoading = true
         apiManager.fetchArtistReleases(artistId: artistId) { [weak self] result in
             DispatchQueue.main.async {
+                self?.isLoading = false
                 switch result {
                 case .success(let albums):
-                    self?.isLoading = false
-                    self?.albums = albums
+                    if albums.releases.isEmpty {
+                        self?.hasMoreAlbums = false
+                    } else {
+                        self?.hasMoreAlbums = true
+                        if self?.albums == nil {
+                            self?.albums = albums
+                        } else {
+                            self?.albums?.releases.append(contentsOf: albums.releases)
+                        }
+                    }
                 case .failure(let error):
-                    self?.isLoading = false
                     self?.errorMessage = "Error: \(error.localizedDescription)"
                 }
             }
+        }
+    }
+
+    func loadMoreAlbumsIfNeeded(currentAlbum: Release) {
+        let thresholdIndex = albums?.releases.index(albums!.releases.endIndex, offsetBy: -1) ?? 0
+        if albums?.releases.firstIndex(where: { $0.id == currentAlbum.id }) == thresholdIndex, hasMoreAlbums {
+            currentPage += 1
+            fetchArtistReleases(artistId: artistId, page: currentPage)
         }
     }
     
@@ -67,7 +85,7 @@ class ArtistAlbumsViewModel: ObservableObject {
                 albums = albums.sorted { $0.title < $1.title }
         }
 
-
         return albums
     }
 }
+
