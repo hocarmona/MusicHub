@@ -20,8 +20,8 @@ class DiscogsAPIManager {
     private let token = "FApxJMyYMjGWOBBJwoQiIWVItklsxjaZMaXYxhgH"
     private let userAgent = "MusicHub/1.0"
     
-    func searchArtist(query: String, completion: @escaping (Result<[SearchResult], Error>) -> Void) {
-        let urlString = "\(baseURL)/database/search?q=\(query)&type=artist"
+    func searchArtist(query: String, page: Int = 1, itemsPerPage: Int = 30, completion: @escaping (Result<ArtistSearch, Error>) -> Void) {
+        let urlString = "\(baseURL)/database/search?q=\(query)&type=artist&page=\(page)&per_page=\(itemsPerPage)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NetworkError.invalidURL))
             return
@@ -49,7 +49,7 @@ class DiscogsAPIManager {
 
             do {
                 let searchResult = try JSONDecoder().decode(ArtistSearch.self, from: data)
-                completion(.success(searchResult.results))
+                completion(.success(searchResult))
             } catch {
                 completion(.failure(error))
             }
