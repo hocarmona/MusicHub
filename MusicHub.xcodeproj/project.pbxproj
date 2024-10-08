@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AAD743E2CB4E620008B9B94 /* MusicHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD743D2CB4E620008B9B94 /* MusicHubTests.swift */; };
+		6AAD74472CB4F322008B9B94 /* ArtistViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD74462CB4F322008B9B94 /* ArtistViewModelTests.swift */; };
+		6AAD74492CB4F749008B9B94 /* ArtistDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD74482CB4F749008B9B94 /* ArtistDetailViewModelTests.swift */; };
+		6AAD744B2CB4F8E1008B9B94 /* ArtistAlbumsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD744A2CB4F8E1008B9B94 /* ArtistAlbumsViewModelTests.swift */; };
 		6AFA83522CB1D751001E8C3D /* MusicHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83512CB1D751001E8C3D /* MusicHubApp.swift */; };
 		6AFA83542CB1D751001E8C3D /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA83532CB1D751001E8C3D /* ArtistListView.swift */; };
 		6AFA83562CB1D756001E8C3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFA83552CB1D756001E8C3D /* Assets.xcassets */; };
@@ -25,7 +29,22 @@
 		6AFA837C2CB4D2B2001E8C3D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA837B2CB4D2B2001E8C3D /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6AAD743F2CB4E620008B9B94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AFA83462CB1D751001E8C3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AFA834D2CB1D751001E8C3D;
+			remoteInfo = MusicHub;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		6AAD743B2CB4E620008B9B94 /* MusicHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AAD743D2CB4E620008B9B94 /* MusicHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHubTests.swift; sourceTree = "<group>"; };
+		6AAD74462CB4F322008B9B94 /* ArtistViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewModelTests.swift; sourceTree = "<group>"; };
+		6AAD74482CB4F749008B9B94 /* ArtistDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewModelTests.swift; sourceTree = "<group>"; };
+		6AAD744A2CB4F8E1008B9B94 /* ArtistAlbumsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistAlbumsViewModelTests.swift; sourceTree = "<group>"; };
 		6AFA834E2CB1D751001E8C3D /* MusicHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AFA83512CB1D751001E8C3D /* MusicHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHubApp.swift; sourceTree = "<group>"; };
 		6AFA83532CB1D751001E8C3D /* ArtistListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
@@ -46,6 +65,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6AAD74382CB4E620008B9B94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AFA834B2CB1D751001E8C3D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -56,10 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AAD743C2CB4E620008B9B94 /* MusicHubTests */ = {
+			isa = PBXGroup;
+			children = (
+				6AAD743D2CB4E620008B9B94 /* MusicHubTests.swift */,
+				6AAD74462CB4F322008B9B94 /* ArtistViewModelTests.swift */,
+				6AAD74482CB4F749008B9B94 /* ArtistDetailViewModelTests.swift */,
+				6AAD744A2CB4F8E1008B9B94 /* ArtistAlbumsViewModelTests.swift */,
+			);
+			path = MusicHubTests;
+			sourceTree = "<group>";
+		};
 		6AFA83452CB1D751001E8C3D = {
 			isa = PBXGroup;
 			children = (
 				6AFA83502CB1D751001E8C3D /* MusicHub */,
+				6AAD743C2CB4E620008B9B94 /* MusicHubTests */,
 				6AFA834F2CB1D751001E8C3D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				6AFA834E2CB1D751001E8C3D /* MusicHub.app */,
+				6AAD743B2CB4E620008B9B94 /* MusicHubTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +177,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6AAD743A2CB4E620008B9B94 /* MusicHubTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AAD74432CB4E620008B9B94 /* Build configuration list for PBXNativeTarget "MusicHubTests" */;
+			buildPhases = (
+				6AAD74372CB4E620008B9B94 /* Sources */,
+				6AAD74382CB4E620008B9B94 /* Frameworks */,
+				6AAD74392CB4E620008B9B94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AAD74402CB4E620008B9B94 /* PBXTargetDependency */,
+			);
+			name = MusicHubTests;
+			productName = MusicHubTests;
+			productReference = 6AAD743B2CB4E620008B9B94 /* MusicHubTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6AFA834D2CB1D751001E8C3D /* MusicHub */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AFA835C2CB1D756001E8C3D /* Build configuration list for PBXNativeTarget "MusicHub" */;
@@ -165,6 +222,10 @@
 				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
+					6AAD743A2CB4E620008B9B94 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 6AFA834D2CB1D751001E8C3D;
+					};
 					6AFA834D2CB1D751001E8C3D = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -184,11 +245,19 @@
 			projectRoot = "";
 			targets = (
 				6AFA834D2CB1D751001E8C3D /* MusicHub */,
+				6AAD743A2CB4E620008B9B94 /* MusicHubTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6AAD74392CB4E620008B9B94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AFA834C2CB1D751001E8C3D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +270,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6AAD74372CB4E620008B9B94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AAD74492CB4F749008B9B94 /* ArtistDetailViewModelTests.swift in Sources */,
+				6AAD743E2CB4E620008B9B94 /* MusicHubTests.swift in Sources */,
+				6AAD744B2CB4F8E1008B9B94 /* ArtistAlbumsViewModelTests.swift in Sources */,
+				6AAD74472CB4F322008B9B94 /* ArtistViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AFA834A2CB1D751001E8C3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,7 +304,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6AAD74402CB4E620008B9B94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AFA834D2CB1D751001E8C3D /* MusicHub */;
+			targetProxy = 6AAD743F2CB4E620008B9B94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		6AAD74412CB4E620008B9B94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7M2244JY3M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orcabe.MusicHubTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicHub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MusicHub";
+			};
+			name = Debug;
+		};
+		6AAD74422CB4E620008B9B94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7M2244JY3M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orcabe.MusicHubTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicHub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MusicHub";
+			};
+			name = Release;
+		};
 		6AFA835A2CB1D756001E8C3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -407,6 +531,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6AAD74432CB4E620008B9B94 /* Build configuration list for PBXNativeTarget "MusicHubTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AAD74412CB4E620008B9B94 /* Debug */,
+				6AAD74422CB4E620008B9B94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6AFA83492CB1D751001E8C3D /* Build configuration list for PBXProject "MusicHub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

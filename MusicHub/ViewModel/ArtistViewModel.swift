@@ -14,7 +14,7 @@ class ArtistViewModel: ObservableObject {
     @Published var searchQuery: String = "" {
         didSet {
             if !searchQuery.isEmpty {
-                resetPagination() // Reiniciamos al realizar una nueva búsqueda
+                resetPagination()
                 searchArtist(query: searchQuery)
             } else {
                 artists = []
@@ -22,11 +22,11 @@ class ArtistViewModel: ObservableObject {
             }
         }
     }
-    @Published var isLoadingPage = false // Nuevo indicador de carga
+    @Published var isLoadingPage = false
 
     private let apiManager = DiscogsAPIManager()
-    private var currentPage = 1
-    private var totalPages = 1
+    var currentPage = 1
+    var totalPages = 1
     private let itemsPerPage = 30
 
     func searchArtist(query: String, page: Int = 1) {
