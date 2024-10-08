@@ -13,12 +13,13 @@ class ArtistDetailViewModel: ObservableObject {
     let artistId: Int
     let artistImage: String?
     @Published var artist: ArtistMoreDetails?
-    private let apiManager = DiscogsAPIManager()
+    private let apiManager: DiscogsAPIManagerProtocol
     @Published var errorMessage: String?
 
-    init(artistId: Int, artistImage: String?) {
+    init(artistId: Int, artistImage: String?, apiManager: DiscogsAPIManagerProtocol = DiscogsAPIManager()) {
         self.artistId = artistId
         self.artistImage = artistImage
+        self.apiManager = apiManager
         fetchArtistDetails(artistId: artistId)
     }
     

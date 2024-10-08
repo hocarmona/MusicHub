@@ -14,7 +14,6 @@ class ArtistViewModel: ObservableObject {
     @Published var searchQuery: String = "" {
         didSet {
             if !searchQuery.isEmpty {
-                resetPagination()
                 searchArtist(query: searchQuery)
             } else {
                 artists = []
@@ -44,6 +43,7 @@ class ArtistViewModel: ObservableObject {
                 case .success(let searchResult):
                     self?.currentPage = page
                     self?.totalPages = searchResult.pagination.pages
+                    self?.artists = searchResult.results
                     if page == 1 {
                         self?.artists = searchResult.results
                     } else {
@@ -67,12 +67,6 @@ class ArtistViewModel: ObservableObject {
 
     func loadNextPage() {
         searchArtist(query: searchQuery, page: currentPage + 1)
-    }
-
-    private func resetPagination() {
-        currentPage = 1
-        totalPages = 1
-        artists = []
     }
 }
 

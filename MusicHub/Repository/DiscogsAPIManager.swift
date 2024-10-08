@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DiscogsAPIManager {
+class DiscogsAPIManager: DiscogsAPIManagerProtocol {
     private let baseURL = "https://api.discogs.com"
     private let token = "FApxJMyYMjGWOBBJwoQiIWVItklsxjaZMaXYxhgH"
     private let userAgent = "MusicHub/1.0"
@@ -123,3 +123,8 @@ class DiscogsAPIManager {
 
 }
 
+protocol DiscogsAPIManagerProtocol {
+    func searchArtist(query: String, page: Int, itemsPerPage: Int, completion: @escaping (Result<ArtistSearch, Error>) -> Void)
+    func fetchArtistDetails(artistId: Int, completion: @escaping (Result<ArtistMoreDetails, Error>) -> Void)
+    func fetchArtistReleases(artistId: Int, page: Int, completion: @escaping (Result<ArtistAlbums, Error>) -> Void)
+}
